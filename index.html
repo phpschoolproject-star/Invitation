@@ -1,132 +1,254 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Annaprashan Invitation</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rice Ceremony Invitation - Pravisha</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif&display=swap');
 
-  body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#ffecd2 0%, #fcb69f 100%);
-    display:flex;align-items:center;justify-content:center;
-    min-height:100vh;padding:20px;
-    overflow:hidden;
-  }
+    body {
+      margin: 0;
+      padding: 30px 10px;
+      font-family: 'Noto Serif', serif;
+      background: linear-gradient(135deg, #fffdf7, #fef6ec);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-  /* Floating balloons */
-  .balloon{
-    position:absolute;
-    bottom:-150px;
-    font-size:60px;
-    animation:floatUp 12s linear infinite;
-    opacity:0.8;
-  }
-  .balloon:nth-child(1){left:15%;animation-delay:0s;}
-  .balloon:nth-child(2){left:45%;animation-delay:3s;}
-  .balloon:nth-child(3){left:75%;animation-delay:6s;}
-  @keyframes floatUp {
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-120vh);}
-  }
+    /* Background Alpona */
+    .alpona-bg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: url("https://i.ibb.co/Y3gzJ4m/alpona.png") no-repeat center/contain;
+      opacity: 0.08;
+      animation: spin 60s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin {
+      from { transform: translate(-50%, -50%) rotate(0deg);}
+      to { transform: translate(-50%, -50%) rotate(360deg);}
+    }
 
-  .card{
-    max-width:820px;width:100%;
-    background: linear-gradient(135deg,#fff 0%,#fff5f7 100%);
-    border-radius:24px;
-    box-shadow:0 12px 45px rgba(0,0,0,0.25);
-    padding:42px 30px;
-    text-align:center;
-    animation:fadeInUp 1.5s ease;
-    position:relative;
-    z-index:5;
-  }
-  @keyframes fadeInUp {
-    0%{opacity:0;transform:translateY(40px);}
-    100%{opacity:1;transform:translateY(0);}
-  }
+    /* Floating balloons */
+    .balloon {
+      position: fixed;
+      bottom: -150px;
+      width: 60px;
+      opacity: 0.8;
+      animation: fly 15s linear infinite;
+      z-index: 0;
+    }
+    @keyframes fly {
+      0% { transform: translateY(0) scale(1);}
+      100% { transform: translateY(-120vh) scale(1.1);}
+    }
+    .balloon:nth-child(2) { left: 10%; animation-delay: 0s; }
+    .balloon:nth-child(3) { left: 25%; animation-delay: 4s; width: 70px; }
+    .balloon:nth-child(4) { left: 50%; animation-delay: 2s; width: 50px; }
+    .balloon:nth-child(5) { left: 70%; animation-delay: 6s; }
+    .balloon:nth-child(6) { left: 85%; animation-delay: 3s; width: 75px; }
 
-  h1{
-    font-family:'Great Vibes',cursive;
-    font-size:48px;
-    color:#d6336c;
-    margin-bottom:10px;
-  }
-  h2{
-    font-size:20px;
-    color:#444;
-    margin-bottom:28px;
-  }
-  .meta{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:22px;
-    margin:32px 0;
-  }
-  .meta-box{
-    background:linear-gradient(135deg,#ffd6e0,#fff0f6);
-    border-radius:18px;
-    padding:20px;
-    box-shadow:0 4px 14px rgba(0,0,0,0.12);
-    transition:transform 0.3s;
-  }
-  .meta-box:hover{transform:scale(1.07);}
-  .meta-box strong{
-    display:block;
-    color:#d6336c;
-    margin-bottom:8px;
-    font-size:20px;
-  }
-  .meta-box p{margin:0;font-size:16px;line-height:1.5}
-  .maplink{
-    display:inline-block;
-    margin-top:12px;
-    text-decoration:none;
-    background:#d6336c;
-    color:#fff;
-    padding:10px 18px;
-    border-radius:30px;
-    font-weight:600;
-    transition:0.3s;
-  }
-  .maplink:hover{background:#a61e4d;}
-  .footer{
-    margin-top:28px;
-    font-size:18px;
-    color:#333;
-  }
-</style>
+    /* Invitation card */
+    .card {
+      position: relative;
+      background: #fffefb;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      animation: fadeIn 1.2s ease-in-out;
+      z-index: 2;
+      overflow: hidden;
+
+      /* Bengali Alpana border */
+      border: 35px solid transparent;
+      border-image: url("https://i.ibb.co/JR0mgd3/alpana-border.png") 50 round;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4em;
+      color: #7a5c2e;
+      margin: 0 0 12px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 6px #f9e6b3; }
+      to { text-shadow: 0 0 16px #d4af37; }
+    }
+
+    h2, p {
+      opacity: 0;
+      animation: fadeText 1s forwards;
+    }
+    h2 { animation-delay: 0.8s; position: relative; z-index: 2; }
+    p:nth-of-type(1) { animation-delay: 0.4s; }
+    p:nth-of-type(2) { animation-delay: 1.2s; }
+    p:nth-of-type(3) { animation-delay: 1.6s; }
+    .footer { animation-delay: 2s; }
+
+    @keyframes fadeText {
+      from {opacity: 0; transform: translateY(15px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .highlight {
+      color: #b8860b;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.95em;
+      color: #555;
+      opacity: 0;
+      animation: fadeText 1s forwards;
+    }
+
+    .icon {
+      width: 110px;
+      margin: 10px auto 15px;
+      display: block;
+      animation: float 4s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #fff;
+      color: #7a5c2e;
+      border: 2px solid #d4af37;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: bold;
+      transition: 0.3s;
+      animation: pulse 2s infinite;
+      position: relative;
+      z-index: 2;
+    }
+    .btn:hover {
+      background: #fceecf;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.6);}
+      70% { box-shadow: 0 0 0 12px rgba(212,175,55,0);}
+      100% { box-shadow: 0 0 0 0 rgba(212,175,55,0);}
+    }
+
+    /* Sparkles inside card */
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: gold;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: sparkleMove 6s linear infinite;
+    }
+    .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 40%; left: 80%; animation-delay: 2s; }
+    .sparkle:nth-child(3) { top: 70%; left: 30%; animation-delay: 4s; }
+    .sparkle:nth-child(4) { top: 85%; left: 60%; animation-delay: 1s; }
+
+    @keyframes sparkleMove {
+      0% { transform: scale(0.5) translateY(0); opacity: 0.7; }
+      50% { transform: scale(1.2) translateY(-20px); opacity: 1; }
+      100% { transform: scale(0.5) translateY(0); opacity: 0.7; }
+    }
+
+    /* Rotating alpona motif behind name */
+    .alpona-inside {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 150px;
+      background: url("https://i.ibb.co/Y3gzJ4m/alpona.png") no-repeat center/contain;
+      opacity: 0.1;
+      animation: spin 20s linear infinite;
+      z-index: 1;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.3em; }
+      p  { font-size: 0.95em; }
+      .icon { width: 85px; }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Background Alpona -->
+  <div class="alpona-bg"></div>
+
   <!-- Floating balloons -->
-  <div class="balloon">🎈</div>
-  <div class="balloon">🎉</div>
-  <div class="balloon">🎈</div>
+  <img src="https://i.ibb.co/3yhQX2g/balloon.png" class="balloon" alt="balloon">
+  <img src="https://i.ibb.co/3yhQX2g/balloon.png" class="balloon" alt="balloon">
+  <img src="https://i.ibb.co/3yhQX2g/balloon.png" class="balloon" alt="balloon">
+  <img src="https://i.ibb.co/3yhQX2g/balloon.png" class="balloon" alt="balloon">
+  <img src="https://i.ibb.co/3yhQX2g/balloon.png" class="balloon" alt="balloon">
 
-  <article class="card">
-    <h1>🌸 Annaprashan Ceremony 🌸</h1>
-    <h2>We warmly invite you to celebrate the rice ceremony of our daughter<br><strong style="color:#a61e4d;"> 👧 Pravisha</strong></h2>
+  <!-- Invitation card -->
+  <div class="card">
+    <!-- Sparkles -->
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
 
-    <div class="meta">
-      <div class="meta-box">
-        <strong>📅 Date & Time</strong>
-        <p>Sunday, <b>5th Oct 2025</b><br>⏰ 12 PM onwards</p>
-      </div>
-      <div class="meta-box">
-        <strong>📍 Venue</strong>
-        <p>Roy Anusthan Bhavan,<br>Kirnahar, Birbhum</p>
-        <a class="maplink" href="https://maps.app.goo.gl/vuCgGWXbLS2Rn1V98?g_st=aw" target="_blank">Open in Google Maps</a>
-      </div>
-      <div class="meta-box">
-        <strong>🎊 Program</strong>
-        <p>🙏 Traditional Ceremony<br>🍽️ Lunch & Celebration</p>
-      </div>
-    </div>
+    <!-- Inside rotating alpona motif -->
+    <div class="alpona-inside"></div>
 
-    <p class="footer">With love & blessings,<br>❤️ Soumesh & Payel ❤️</p>
-  </article>
+    <img src="https://i.ibb.co/2PYV2wP/rice-bowl.png" class="icon" alt="Rice Ceremony">
+
+    <h1>Rice Ceremony Invitation</h1>
+
+    <p>With joy in our hearts, we invite you to the<br>
+      <span class="highlight">Annaprashan</span> of our beloved daughter</p>
+
+    <h2>👧 Pravisha</h2>
+
+    <p>📅 Date & Time: <span class="highlight">5th Oct, 2025 | 12:00 PM Onwards</span></p>
+    <p>📍 Venue: <span class="highlight">Roy Anusthan Bhavan, Kirnahar, Birbhum</span></p>
+
+    <!-- Google Maps Button -->
+    <a href="https://maps.app.goo.gl/vuCgGWXbLS2Rn1V98?g_st=aw" target="_blank" class="btn">📍 View on Google Maps</a>
+
+    <p>Your presence will bless this occasion<br> and make it memorable 🙏</p>
+
+    <div class="footer">With love,<br>Payel & Soumesh</div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bg-music" loop autoplay>
+    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+  </audio>
 </body>
 </html>
